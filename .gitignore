@@ -1,0 +1,56 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables
+.env
+.env.*  # e.g., .env.local, .env.production
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build directories (if you're using a build tool)
+dist/
+build/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+
+# Coverage reports
+coverage/
+*.lcov
+
+# TypeScript (if applicable)
+*.tsbuildinfo
+
+# Docker-related (optional)
+docker-compose.override.yml
+
+# PM2 logs and dumps
+pids/
+*.pid
+*.log
+dump.pm2
+
+# Optional: local test databases or SQLite
+*.sqlite
+*.sqlite3
+
+# Optional: Swagger or API docs generated files
+swagger.json
+swagger.yaml

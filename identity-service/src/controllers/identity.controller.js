@@ -1,4 +1,5 @@
 const User = require("../models/user.model");
+const generateToken = require("../utils/genrateToken");
 const logger = require("../utils/logger");
 const { validationRegistration } = require("../utils/validation");
 
@@ -29,10 +30,22 @@ module.exports.registerUser = async (req, res) => {
             username, email, password 
         });
         await user.save();
-
         logger.info("User saved successfully", user._id);
+
+        const {accessToken, refreshToken} = await generateToken(user);
+
+        res.status(201).json({
+            status: true,
+            message: "User created successfully",
+            accessToken,
+            refreshToken
+        })
         
     } catch (error) {
-
+        logger.error("Registration error occured", error);
+        res.status(500).json({
+            status: false,
+            message: "Registration error occured"   
+        })
     }
 }

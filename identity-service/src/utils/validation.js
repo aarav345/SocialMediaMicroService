@@ -8,7 +8,17 @@ const validationRegistration = (data) => {
     });
 
     return schema.validate(data);
+};
+
+
+const validationLogin = (data) => {
+    const schema = Joi.object({
+        email: Joi.string().min(3).max(50).required(),
+        password: Joi.string().min(6).required()
+    });
+
+    return schema.validate(data);
 }
 
 
-module.exports = {validationRegistration}
+module.exports = {validationRegistration, validationLogin}

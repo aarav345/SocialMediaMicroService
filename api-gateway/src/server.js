@@ -9,6 +9,7 @@ const logger = require("./utils/logger");
 const {rateLimit} = require("express-rate-limit");
 const {RedisStore} = require("rate-limit-redis");
 const proxy = require("express-http-proxy");
+const errorHandler = require("./middleware/errorHandler");
 
 
 const app = express();
@@ -76,6 +77,16 @@ app.use("/v1/auth", proxy(process.env.IDENTITY_SERVICE_URL, {
         logger.info(`Response received from Identity service: ${JSON.stringify(proxyResData)}`);
         return proxyResData;
     }
-}))
+}));
+
+
+app.use(errorHandler);
+
+
+app.listen(PORT, () => {
+    logger.info(`API Gateway is running on PORT ${PORT}`);
+    logger.info(`Identity Service URL is running on PORT: ${process.env.IDENTITY_SERVICE_URL}`);
+    logger.info(`Redis URL: ${process.env.REDIS_URL}`);
+})
 
 

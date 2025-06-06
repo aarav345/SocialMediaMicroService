@@ -1,0 +1,7 @@
+{"level":"error","message":"Proxy error: connect ECONNREFUSED 127.0.0.1:3001","service":"api-gateway","timestamp":"2025-06-06T08:38:59.710Z"}
+{"level":"error","message":"Proxy error: Invalid value \"undefined\" for header \"x-user-id\"","service":"api-gateway","timestamp":"2025-06-06T08:40:04.973Z"}
+{"level":"error","message":"Proxy error: Invalid value \"undefined\" for header \"x-user-id\"","service":"api-gateway","timestamp":"2025-06-06T08:41:10.828Z"}
+{"level":"error","message":"Proxy error: Invalid value \"undefined\" for header \"x-user-id\"","service":"api-gateway","timestamp":"2025-06-06T08:41:42.431Z"}
+{"level":"error","message":"Proxy error: Invalid value \"undefined\" for header \"x-user-id\"","service":"api-gateway","timestamp":"2025-06-06T08:41:58.053Z"}
+{"level":"error","message":"Proxy error: socket hang up","service":"api-gateway","timestamp":"2025-06-06T09:17:32.044Z"}
+{"level":"error","message":"Proxy error: read ECONNRESET","service":"api-gateway","timestamp":"2025-06-06T09:17:32.046Z"}

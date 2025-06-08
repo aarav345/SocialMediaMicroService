@@ -10,7 +10,9 @@ router.use(authenticateRequest);
 
 // routes
 router.use("/create-post", createPost);
-router.use("/get-all-posts", getAllPosts);
+router.use("/get-posts", getAllPosts);
+router.use("/get-post/:id", getPost);   
+router.use("/delete-post/:id", deletePost);
 
 
 

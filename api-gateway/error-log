@@ -5,3 +5,6 @@
 {"level":"error","message":"Proxy error: Invalid value \"undefined\" for header \"x-user-id\"","service":"api-gateway","timestamp":"2025-06-06T08:41:58.053Z"}
 {"level":"error","message":"Proxy error: socket hang up","service":"api-gateway","timestamp":"2025-06-06T09:17:32.044Z"}
 {"level":"error","message":"Proxy error: read ECONNRESET","service":"api-gateway","timestamp":"2025-06-06T09:17:32.046Z"}
+{"level":"error","message":"Proxy error: connect ECONNREFUSED 127.0.0.1:3001","service":"api-gateway","timestamp":"2025-06-08T06:29:35.776Z"}
+{"level":"error","message":"Proxy error: socket hang up","service":"api-gateway","timestamp":"2025-06-08T07:18:46.477Z"}
+{"level":"error","message":"Proxy error: read ECONNRESET","service":"api-gateway","timestamp":"2025-06-08T07:18:46.478Z"}

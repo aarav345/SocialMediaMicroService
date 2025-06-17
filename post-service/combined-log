@@ -445,3 +445,17 @@
 {"level":"info","message":"Received GET request for /api/posts/get-post/68453bd0c24dfe0090686d11","service":"post-service","timestamp":"2025-06-08T07:33:39.205Z"}
 {"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-08T07:33:39.206Z"}
 {"level":"warn","message":"Post not found","postID":"68453bd0c24dfe0090686d11","service":"post-service","timestamp":"2025-06-08T07:33:39.248Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-11T05:51:38.376Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-11T05:52:04.550Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-11T05:54:07.675Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-11T05:54:08.284Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-11T05:55:11.672Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-11T05:55:12.307Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-11T07:18:40.558Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-11T07:18:41.304Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-17T09:54:05.278Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-17T09:54:05.836Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-17T10:10:58.246Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-17T10:10:58.821Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-17T10:12:23.390Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-17T10:12:23.940Z"}

@@ -116,3 +116,7 @@
 {"level":"info","message":"Media upload process completed successfully","service":"media-service","timestamp":"2025-06-17T10:16:50.589Z"}
 {"level":"info","message":"Media service is running on port 3003","service":"media-service","timestamp":"2025-06-17T10:18:57.792Z"}
 {"level":"info","message":"Connected to MongoDB","service":"media-service","timestamp":"2025-06-17T10:18:58.353Z"}
+{"level":"info","message":"Media service is running on port 3003","service":"media-service","timestamp":"2025-06-19T07:06:49.215Z"}
+{"level":"info","message":"Connected to MongoDB","service":"media-service","timestamp":"2025-06-19T07:06:49.919Z"}
+{"level":"info","message":"Media service is running on port 3003","service":"media-service","timestamp":"2025-06-19T07:13:16.301Z"}
+{"level":"info","message":"Connected to MongoDB","service":"media-service","timestamp":"2025-06-19T07:13:16.947Z"}

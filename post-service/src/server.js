@@ -9,6 +9,7 @@ const helmet = require("helmet");
 const postRoutes = require("./routes/post.route");
 const logger = require("./utils/logger");
 const errorHandler = require('./middleware/errorHandler');
+const { connectRabbitMQ } = require('./utils/rabbitMq');
 
 
 
@@ -48,10 +49,21 @@ app.use("/api/posts", (req, res, next) => {
 // error handler
 app.use(errorHandler);
 
+async function startServer() {
+    try {
+        await connectRabbitMQ();
+        app.listen(PORT, () => {
+            logger.info(`Post service is running on port ${PORT}`);        
+        });
+    } catch(e) {
+        logger.error("Failed to connect to RabbitMQ:", e);
+        process.exit(1); // Exit the process if RabbitMQ connection fails
+    }
+}
 
-app.listen(PORT, () => {
-    logger.info(`Post service is running on port ${PORT}`);
-});
+startServer();
+
+
 
 
 // unhandled promise rejection

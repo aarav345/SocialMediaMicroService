@@ -173,6 +173,13 @@ module.exports.deletePost = async (req, res) => {
             });
         }
 
+        // publish post delete method : routingKey: post.deleted, message: { postID, userID, mediaIds }
+        await publishEvent('post.deleted', {
+            postID: post._id.toString(),
+            userID: req.user.userID,
+            mediaIds: post.mediaIds || []
+        })
+
         await invalidatePostCache(req, postID);
         logger.info("Post deleted successfully", { postID });
 

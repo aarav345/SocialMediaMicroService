@@ -52,3 +52,21 @@ module.exports.uploadMedia = async (req, res) => {
         });
     }
 }
+
+
+module.exports.getAllMedias = async (req, res, next) => {
+    try {
+        const media = await Media.find({userId: req.user.userID}).sort({createdAt: -1});
+        logger.info(`Fetched ${media.length} media items for user ID: ${req.user.userID}`);
+        return res.status(200).json({
+            success: true,
+            media: media
+        });
+    } catch(e) {
+        logger.error("Error fetching media:", e);
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error"
+        });
+    }
+}

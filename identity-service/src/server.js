@@ -15,7 +15,7 @@ const authRoutes = require("./routes/identity.route");
 const errorHandler = require("./middleware/errorHandler");
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 mongoose
 .connect(process.env.MONGODB_URL)

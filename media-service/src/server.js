@@ -9,6 +9,8 @@ const { default: mongoose } = require('mongoose');
 const {rateLimit} = require('express-rate-limit');
 const Redis = require('ioredis');
 const {RedisStore} = require('rate-limit-redis');
+const { connectRabbitMQ, consumeEvent } = require('../../post-service/src/utils/rabbitMq');
+const { handlePostDeleted } = require('./eventHandlers/mediaEventHandler');
 
 
 const app = express();
@@ -56,12 +58,30 @@ const sensitiveEndpointLimiter = rateLimit({
 app.use("/api/media/upload", sensitiveEndpointLimiter);
 app.use("/api/media", mediaRoutes);
 
+
+// error handler
 app.use(errorHandler);
 
 
-app.listen(PORT, () => {
-    logger.info(`Media service is running on port ${PORT}`);
-});
+// start servers
+async function startServer() {
+    try {
+        await connectRabbitMQ();
+
+        // consume all events
+        await consumeEvent("post.deleted", handlePostDeleted);
+        app.listen(PORT, () => {
+            logger.info(`Media service is running on port ${PORT}`);
+        });        
+    } catch(e) {
+        logger.error("Failed to connect to MongoDB:", e);
+        process.exit(1); // Exit the process if MongoDB connection fails
+    }
+}
+
+startServer();
+
+
 
 process.on('unhandledRejection', (reason, promise) => {
     logger.error(`Unhandled Rejection at: ${promise}, reason: ${reason}`);

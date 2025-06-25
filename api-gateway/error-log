@@ -16,3 +16,5 @@
 {"level":"error","message":"Proxy error: socket hang up","service":"api-gateway","timestamp":"2025-06-24T05:24:25.884Z"}
 {"level":"error","message":"Proxy error: connect ECONNREFUSED 127.0.0.1:3001","service":"api-gateway","timestamp":"2025-06-24T05:24:49.183Z"}
 {"level":"error","message":"Proxy error: connect ECONNREFUSED 127.0.0.1:3001","service":"api-gateway","timestamp":"2025-06-24T05:44:49.317Z"}
+{"level":"error","message":"Proxy error: Cannot set properties of undefined (setting 'Content-Type')","service":"api-gateway","timestamp":"2025-06-25T13:03:26.716Z"}
+{"level":"error","message":"Proxy error: Cannot set properties of undefined (setting 'Content-Type')","service":"api-gateway","timestamp":"2025-06-25T13:03:48.521Z"}

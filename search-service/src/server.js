@@ -7,7 +7,9 @@ const helmet = require("helmet");
 const logger = require("./utils/logger");
 const errorHandler = require('./middleware/errorHandler');
 const Redis = require("ioredis");
-const { connectRabbitMQ } = require('./utils/rabbitMq');
+const { connectRabbitMQ, consumeEvent } = require('./utils/rabbitMq');
+const searchRoutes = require('./routes/search.route');
+const { handlePostCreated, handlePostDeleted } = require('./eventHandlers/searchEventHandler');
 
 
 const app = express();
@@ -36,6 +38,10 @@ app.use((req, res, next) => {
 
 
 // routes
+app.use('/api/search', (req, res, next) => {
+    req.redisClient = redisClient; // Pass redisClient to routes
+    next();
+}, searchRoutes);
 
 
 // error handler
@@ -43,10 +49,12 @@ app.use(errorHandler);
 
 
 // start server 
-
 async function startServer() {
     try {
         connectRabbitMQ();
+
+        await consumeEvent("post.created", (msg) => handlePostCreated(msg, redisClient));
+        await consumeEvent("post.deleted", (msg) => handlePostDeleted(msg, redisClient));
         app.listen(PORT, () => {
             logger.info(`Search service is running on port ${PORT}`);
         })

@@ -54,6 +54,14 @@ module.exports.createPost = async (req, res) => {
 
 
         await newPost.save();
+
+        await publishEvent('post.created', {
+            postID: newPost._id.toString(),
+            userID: req.user.userID,
+            content: newPost.content,
+            createdAt: newPost.createdAt,
+        });
+        
         await invalidatePostCache(req, newPost._id.toString());
 
         logger.info("Post created successfully", newPost);  
@@ -69,8 +77,6 @@ module.exports.createPost = async (req, res) => {
         })
     }
 }
-
-
 
 
 

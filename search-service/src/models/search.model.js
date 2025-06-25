@@ -10,7 +10,7 @@ const searchSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: true,
-        unque: true
+        index: true
     },
     content: {
         type: String,

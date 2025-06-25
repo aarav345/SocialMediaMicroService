@@ -3,7 +3,7 @@ const logger = require("./logger");
 
 let connection = null;
 let channel = null;
-const EXCHANGE_NAME = "search_exchange";
+const EXCHANGE_NAME = "post_exchange";
 
 
 async function connectRabbitMQ() {
@@ -19,7 +19,6 @@ async function connectRabbitMQ() {
         throw e;
     }
 }
-
 
 async function publishEvent(routingKey, message) {
     if (!channel) {

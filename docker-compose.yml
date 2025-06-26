@@ -3,6 +3,7 @@ version: '3.8'
 services:
   api-gateway:
     build: ./api-gateway
+    image: aaravpradhan/api-gateway:latest
     ports:
     - "3000:3000"
     env_file: ./api-gateway/.env
@@ -16,6 +17,7 @@ services:
 
   identity-service:
     build: ./identity-service
+    image: aaravpradhan/identity-gateway:latest
     env_file: ./identity-service/.env
     depends_on:
       - redis
@@ -27,6 +29,7 @@ services:
 
   post-service:
     build: ./post-service
+    image: aaravpradhan/post-gateway:latest
     env_file: ./post-service/.env
     depends_on:
       - redis
@@ -38,6 +41,7 @@ services:
 
   media-service:
     build: ./media-service
+    image: aaravpradhan/media-gateway:latest
     env_file: ./media-service/.env
     depends_on:
       - redis
@@ -48,6 +52,7 @@ services:
 
   search-service:
     build: ./search-service
+    image: aaravpradhan/search-gateway:latest
     env_file: ./search-service/.env
     depends_on:
       - redis

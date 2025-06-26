@@ -9,7 +9,7 @@ const { default: mongoose } = require('mongoose');
 const {rateLimit} = require('express-rate-limit');
 const Redis = require('ioredis');
 const {RedisStore} = require('rate-limit-redis');
-const { connectRabbitMQ, consumeEvent } = require('../../post-service/src/utils/rabbitMq');
+const { connectRabbitMQ, consumeEvent } = require('./utils/rabbitMq');
 const { handlePostDeleted } = require('./eventHandlers/mediaEventHandler');
 
 

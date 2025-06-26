@@ -66,4 +66,7 @@ jobs:
             docker-compose up -d
       
       - name: Debug SSH connection (optional)
+        run: |
+          ssh -v -i ~/.ssh/id_rsa root@62.72.30.37 "echo 'SSH connection successful'"
+        continue-on-error: true
 
